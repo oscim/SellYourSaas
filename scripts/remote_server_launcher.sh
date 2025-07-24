@@ -67,7 +67,10 @@ if [ "x$1" == "xstart" ]; then
 			export abc="index.php"
 		fi
 		
-		php -S $remoteserverlistenip:$remoteserverlistenport -t remote_server $abc 2>&1 &
+#		php -S $remoteserverlistenip:$remoteserverlistenport -t remote_server $abc 2>&1 &
+		## for launch by systemd
+  		exec php -S "$remoteserverlistenip:$remoteserverlistenport"  -t remote_server "$abc"
+
 		echo "Server started with php -S $remoteserverlistenip:$remoteserverlistenport -t remote_server $abc"
 		
 		echo "Logs of server will be in /var/log/remote_server.log"
