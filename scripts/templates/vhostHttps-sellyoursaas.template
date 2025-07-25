@@ -1,4 +1,3 @@
-  GNU nano 7.2                                                   /home/admin.my-support.pro/www/htdocs/dolibarr_sellyoursaas/scripts/templates/vhostHttps-sellyoursaas.template                                                             
 # === vhost HTTP sur le port 80 ===
 <VirtualHost *:80>
     ServerName __webAppDomain__
