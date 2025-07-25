@@ -463,6 +463,11 @@ function checkScriptFile($scriptfile, $fh, $params)
 		if (preg_match('/^#?cd \/home\/jail\/home\/osu[a-z0-9]+\/dbn[a-z0-9]+\/htdocs\/install; php upgrade2\.php 0\.0\.0 0\.0\.0 [a-z_,]+$/i', $newline)) {
 			continue;
 		}
+
+
+		if (preg_match( '/^\s*source\s+\/usr\/local\/bin\/lib_install\.sh\s*&&\s*create_php_fpm_pool\s+["\'][a-z0-9\.\-]+["\']\s+["\'][a-z0-9_\-]+["\']\s*$/i',  $newline)) {
+                        continue;
+                }
 		// TODO enhance list of allowed patterns
 		// ...
 
